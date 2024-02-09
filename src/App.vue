@@ -47,10 +47,10 @@ export default {
 
   computed: {
     card_class() {
-      return this.$isMobile() ? 'my-1 mx-0' : 'ma-2';
+      return this.$isMobile() ? 'my-1 mx-0' : 'ma-2 mx-3';
     },
     top_card_class() {
-      return this.$isMobile() ? 'my-1 mx-0 mt-3' : 'ma-2 mt-4';
+      return this.$isMobile() ? 'my-1 mx-0 mt-2' : 'ma-2 mt-3';
     },
   },
 

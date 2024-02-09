@@ -8,15 +8,17 @@
   </VCardTitle>
   <VDivider/>
   <VCardText>
-    Provo Area Avalanch Forecast
-    <a href="https://utahavalanchecenter.org/forecast/provo">
+    <!-- <a href="https://utahavalanchecenter.org/forecast/provo"> -->
       <VImg
         :src="avalanche_rose_link"
         :class="$isMobile() ?  '' : 'mx-12'"
         :width=" $isMobile() ? '200' : '400'"
+        style="cursor: pointer;"
+        @click="redirectToLink('https://utahavalanchecenter.org/forecast/provo')"
       >
+        Provo Area Avalanch Forecast
       </VImg>
-    </a>
+    <!-- </a> -->
   </VCardText>
 </VCard>
 
@@ -61,5 +63,11 @@ export default {
     ],
     avalanche_rose_link: '',
   }),
+
+  methods: {
+    redirectToLink(link) {
+      window.location.href = link;
+    }
+  }
 }
 </script>
