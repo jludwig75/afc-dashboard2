@@ -33,6 +33,10 @@ export default {
   data: () => ({
     links: [
       {
+        name: 'American Fork Canyon Dashboard (OG)',
+        link: 'https://afc.nosack.com/'
+      },
+      {
         name: 'Timpanogos Divide Snow Depth and Temperature (National Weather Service)',
         link: 'https://www.weather.gov/wrh/timeseries?site=TIMU1'
       },
