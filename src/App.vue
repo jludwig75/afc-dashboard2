@@ -7,12 +7,20 @@
         color="teal-darken-4"
       >
         <VAppBarTitle>
+          <VIcon
+            class="mr-3"
+          >
+            mdi-pine-tree
+          </VIcon>
           AFC Backup Dashboard
         </VAppBarTitle>
       </VAppBar>
       <VMain>
-        <CanyonLinks
+        <CanyonConditions
           :card_class="top_card_class"
+        />
+        <AvalanchForecast
+          :card_class="card_class"
         />
         <TrafficCameras
           :card_class="card_class"
@@ -24,14 +32,16 @@
 </template>
 
 <script>
-import CanyonLinks from './components/CanyonLinks.vue';
+import CanyonConditions from './components/CanyonConditions.vue';
+import AvalanchForecast from './components/AvalanchForecast.vue';
 import TrafficCameras from './components/TrafficCameras.vue';
 
 export default {
   name: 'App',
 
   components: {
-    CanyonLinks,
+    CanyonConditions,
+    AvalanchForecast,
     TrafficCameras,
   },
 
