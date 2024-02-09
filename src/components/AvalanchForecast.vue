@@ -20,7 +20,7 @@
         style="cursor: pointer;"
         @click="redirectToLink(`'https://utahavalanchecenter.org/forecast/${forecast.name}`)"
       >
-        {{ forecast.display_name }} Area Avalanch Forecast
+        {{ forecast.display_name }} Area Avalanche Forecast
       </VImg>
     </span>
   </VCardText>
