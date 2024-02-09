@@ -18,7 +18,7 @@
         :class="$isMobile() ?  '' : 'mx-12'"
         :width=" $isMobile() ? '200' : '400'"
         style="cursor: pointer;"
-        @click="redirectToLink(`'https://utahavalanchecenter.org/forecast/${forecast.name}`)"
+        @click="redirectToLink(`https://utahavalanchecenter.org/forecast/${forecast.name}`)"
       >
         {{ forecast.display_name }} Area Avalanche Forecast
       </VImg>
