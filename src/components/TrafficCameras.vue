@@ -14,6 +14,7 @@
         :class="$isMobile() ?  '' : 'mx-12'"
         :src="image.link"
         :width=" $isMobile() ? '' : '400'"
+        cover
       >
         {{ image.name }}
       </VImg>
