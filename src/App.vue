@@ -16,18 +16,12 @@
           </VCardTitle>
           <VCardText>
             <VList>
-              <VListItem>
+              <VListItem
+                v-for="link in afc_links"
+                :key="link"
+              >
                 <VListItemTitle>
-                  <a href="https://www.weather.gov/wrh/timeseries?site=TIMU1">Timpanogos Divide Snow Depth and Temperature (National Weather Service)</a>
-                </VListItemTitle>
-                <VListItemTitle>
-                  <a href="https://snoflo.org/report/snow/utah/timpanogos-divide/">Timpanogos Divide Snow Depth and Temperature (SNOFLO)</a>
-                </VListItemTitle>
-                <VListItemTitle>
-                  <a href="https://utahavalanchecenter.org/forecast/provo">Avalanche Forecase - Provo Area</a>
-                </VListItemTitle>
-                <VListItemTitle>
-                  <a href="https://staging.udottraffic.utah.gov/">UDOT Traffic Cameras</a>
+                  <a :href="link.link">{{ link.name }}</a>
                 </VListItemTitle>
               </VListItem>
             </VList>
@@ -43,7 +37,24 @@ export default {
   name: 'App',
 
   data: () => ({
-    //
+    afc_links: [
+      {
+        name: 'Timpanogos Divide Snow Depth and Temperature (National Weather Service)',
+        link: 'https://www.weather.gov/wrh/timeseries?site=TIMU1'
+      },
+      {
+        name: 'Timpanogos Divide Snow Depth and Temperature (SNOFLO)',
+        link: 'https://snoflo.org/report/snow/utah/timpanogos-divide/'
+      },
+      {
+        name: 'Avalanche Forecase - Provo Area',
+        link: 'https://utahavalanchecenter.org/forecast/provo'
+      },
+      {
+        name: 'UDOT Traffic Cameras',
+        link: 'https://staging.udottraffic.utah.gov/'
+      },
+    ],
   }),
 }
 </script>
