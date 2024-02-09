@@ -8,7 +8,7 @@
       >
         <VAppBarTitle>
           <VIcon
-            class="mr-3"
+            class="mr-2"
           >
             mdi-pine-tree
           </VIcon>
