@@ -43,16 +43,20 @@ export default {
         link: 'https://www.weather.gov/wrh/timeseries?site=TIMU1'
       },
       {
-        name: 'Timpanogos Divide Snow Depth and Temperature (SNOFLO)',
-        link: 'https://snoflo.org/report/snow/utah/timpanogos-divide/'
+        name: 'Timpanogos Divide Snow Depth and Temperature (USDA)',
+        link: 'https://wcc.sc.egov.usda.gov/reportGenerator/view/customSingleStationReport/hourly/start_of_period/820:UT:SNTL%7Cid=%22%22%7Cname/-71,0/SNWD::value,TOBS::value?fitToScreen=false&sortBy=0:-1'
       },
       {
         name: 'Avalanche Forecase - Provo Area',
         link: 'https://utahavalanchecenter.org/forecast/provo'
       },
       {
-        name: 'UDOT Traffic Cameras',
-        link: 'https://staging.udottraffic.utah.gov/'
+        name: 'Alpine Loop (Pine Hollow) Traffic Cameras',
+        link: 'https://prod-ut.ibi511.com/cctv?start=0&length=10&filters%5B0%5D%5Bi%5D=2&filters%5B0%5D%5Bs%5D=Alpine+Loop+%2F+SR-92+&order%5Bi%5D=1&order%5Bdir%5D=asc'
+      },
+      {
+        name: 'American Fork Canyon (Tibble Fork) Traffic Cameras',
+        link: 'https://prod-ut.ibi511.com/cctv?start=0&length=10&filters%5B0%5D%5Bi%5D=2&filters%5B0%5D%5Bs%5D=American+Fork+Canyon+Rd+%2F+SR-144+&order%5Bi%5D=1&order%5Bdir%5D=asc'
       },
     ],
   }),
