@@ -1,6 +1,7 @@
 <template>
   <VCard
     :class="card_class"
+    border
   >
   <VCardTitle>
     American Fork Canyon Conditions
