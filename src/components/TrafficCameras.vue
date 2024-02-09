@@ -5,6 +5,7 @@
     <VCardTitle>
       Cameras
     </VCardTitle>
+    <VDivider/>
     <VCardText>
       <VImg
         v-for="image in images"

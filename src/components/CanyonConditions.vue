@@ -5,6 +5,7 @@
   <VCardTitle>
     American Fork Canyon Conditions
   </VCardTitle>
+  <VDivider/>
   <VCardText>
     <LinksList
       :links="links"
