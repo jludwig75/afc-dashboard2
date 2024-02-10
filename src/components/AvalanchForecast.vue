@@ -31,6 +31,14 @@
 <script>
 import axios from 'axios';
 
+function minutes_to_ms(minutes) {
+  return minutes * 60 * 1000;
+}
+
+function ms_to_minutes(minutes) {
+  return minutes / (60 * 1000);
+}
+
 export default {
   name: 'AvalanchForecast',
 
@@ -69,6 +77,27 @@ export default {
       window.location.href = link;
     },
     fetch_forecast(forecast) {
+      // Cache the forecast in browser local storage so we only load it every 15 minutes.
+      // TODO: This caching can be done generically for a get request. I'll need it later for other requests.
+      let now = new Date();
+      let forecase_item_name = `'avalanche-forecast-${forecast.name}`;
+      let forecast_json = localStorage.getItem(forecase_item_name);
+      console.log(`Loaded forecast ${forecase_item_name}: ${forecast_json}`);
+      let forecast_data = JSON.parse(forecast_json, (key, value) => {
+        if (key === "date") {
+          return new Date(value); // Convert the string back to a Date
+        }
+        return value; // Keep other properties unchanged
+      });
+      if (forecast_data) {
+        console.log(`Stored forecast date is ${ms_to_minutes(now - forecast_data.date)} minutes old`)
+        if (now - forecast_data.date < minutes_to_ms(15)) {
+          console.log('Using stored forecast');
+          forecast.link = forecast_data.link;
+          return;
+        }
+      }
+      console.log('Not using stored forecast');
       axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
       axios.get(`https://corsproxy.io/?https://utahavalanchecenter.org/forecast/${forecast.name}/json`,
         {
@@ -81,6 +110,16 @@ export default {
             if (advisory.advisory.overall_danger_rose_image) {
               forecast.link = 'https://utahavalanchecenter.org' + advisory.advisory.overall_danger_rose_image;
             }
+          }
+
+          if (forecast.link.length > 0) {
+            let forecast_data = {
+              'date': now,
+              'link': forecast.link
+            }
+            let data_json = JSON.stringify(forecast_data);
+            console.log(`Storing forecast ${forecase_item_name}: ${data_json}`);
+            localStorage.setItem(forecase_item_name, data_json);
           }
         })
         .catch(error => {
