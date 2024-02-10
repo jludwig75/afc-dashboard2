@@ -58,7 +58,7 @@ export default {
         name: 'salt-lake',
         display_name: 'Salt Lake',
         link: '',
-        enabled: true,
+        enabled: false,
       },
     ],
     avalanche_rose_link: '',
